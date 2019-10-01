@@ -1,0 +1,230 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Main.master.cs" Inherits="Main" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Home | MobileHub</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/price-range.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        .clogout {
+            background-color: transparent;
+            border: none;
+            display:block;
+            float:right;
+        }
+        #licon {
+            float:left;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="form1" runat="server">
+        <header id="header1">
+            <!--header-->
+            <div class="header_top">
+                <!--header_top-->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="contactinfo">
+                                <ul class="nav nav-pills">
+                                    <li><a href="#"><i class="fa fa-phone"></i>+9775591628</a></li>
+                                    <li><a href="#"><i class="fa fa-envelope"></i>mobilehub@smartphones.com</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="social-icons pull-right">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/header_top-->
+
+            <div class="header-middle">
+                <!--header-middle-->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="logo pull-left">
+                                <a href="Home.aspx">
+                                    <img src="images/logo_small.jpg" alt="" /></a>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="shop-menu pull-right">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="Cart.aspx"><i class="fa fa-shopping-cart"></i>Cart&nbsp;<asp:Label ID="lblCart" runat="server"></asp:Label></a></li>
+                                    <li>
+                                        <asp:HyperLink ID="hpLogin" href="Login.aspx" runat="server"><i class="fa fa-lock" aria-hidden="true"></i>Login</asp:HyperLink></li>
+                                    <li style="margin-top:9px;">
+                                        <asp:Label ID="licon" runat="server" Text="Label"><i class="fa fa-unlock-alt" aria-hidden="true"></i></asp:Label>
+                                       <asp:Button ID="btnLogout" CssClass="clogout" href="Home.aspx" runat="server" OnClick="btnlogout_Click" Text="Logout" />
+                                       <%-- <asp:HyperLink ID="btnLogout" href="Home.aspx" OnClick="btnlogout_Click" runat="server">Logout</asp:HyperLink>--%>
+                                    </li>
+
+                                   <%-- <li>--%>
+                                        <%--<asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnlogout_Click" /></li>--%>
+                                </ul>
+                                <div style="padding: 20px;margin-left:10px;text-transform: capitalize;">
+                                    <asp:Label ID="lblUsername" runat="server" Text=""></asp:Label>
+                                </div>
+                            </div>
+                        </div>
+                        &nbsp;
+                        </div>
+                </div>
+            </div>
+            <!--/header-middle-->
+
+            <div class="header-bottom">
+                <!--header-bottom-->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                            <div class="mainmenu pull-left">
+                                <ul class="nav navbar-nav collapse navbar-collapse">
+                                    <li><a href="Home.aspx" class="active">Home</a></li>
+
+
+
+                                    <li class="dropdown"><a href="#">Brands<i class="fa fa-angle-down"></i></a>
+                                        <ul role="menu" class="sub-menu">
+
+                                            <li><a href="Oneplus.aspx">Oneplus</a></li>
+                                            <li><a href="Sony.aspx">Sony</a></li>
+                                            <li><a href="Apple.aspx">Apple</a></li>
+                                            <li><a href="Samsung.aspx">Samsung</a></li>
+                                            <li><a href="HTC.aspx">HTC</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="About.aspx">About</a></li>
+                                    <li><a href="Contact.aspx">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="search_box pull-right">
+                                <asp:TextBox ID="txtSearch" placeholder="Search" runat="server" AutoPostBack="true" OnTextChanged="txtSearch_TextChanged"></asp:TextBox>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/header-bottom-->
+        </header>
+        <!--/header-->
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>
+        <!--/slider-->
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+
+
+        <footer id="footer">
+            <!--Footer-->
+
+
+            <div class="footer-widget">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <div class="single-widget">
+                                <h2>Let Us help you</h2>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="Contact.aspx">Contact Us</a></li>
+                                    <li><a href="Contact.aspx">Online Help</a></li>
+                                    <li><a href="FAQ.aspx">FAQ's</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="single-widget">
+                                <h2>Policies</h2>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="Terms.aspx">Terms and Conditions</a></li>
+                                    <li><a href="PrivacyPolicy.aspx">Privacy Policy</a></li>
+                                    <li><a href="Refund.aspx">Refund Policy</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="single-widget">
+                                <h2>About Mobile Hub</h2>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="#">Store Info</a></li>
+                                    <li><a href="#">Carrers</a></li>
+                                    <li><a href="#">Store Location</a></li>
+                                    <li><a href="#">Affillate Program</a></li>
+                                    <li><a href="#">Copyright</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <p class="pull-left">Copyright © 2018 Mobile Hub Inc. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.scrollUp.min.js"></script>
+        <script src="js/price-range.js"></script>
+        <script src="js/jquery.prettyPhoto.js"></script>
+        <script src="js/main.js"></script>
+
+
+
+    </form>
+</body>
+</html>
